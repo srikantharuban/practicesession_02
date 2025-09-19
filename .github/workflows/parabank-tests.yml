@@ -28,28 +28,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        
-    - name: Create package.json
-      run: |
-        cat > package.json << 'EOF'
-        {
-          "name": "parabank-tests",
-          "version": "1.0.0",
-          "description": "ParaBank automated tests using Playwright",
-          "main": "test.js",
-          "scripts": {
-            "test": "node test.js",
-            "test:headed": "node test.js --headed",
-            "install-browsers": "npx playwright install"
-          },
-          "dependencies": {
-            "playwright": "^1.40.0"
-          },
-          "keywords": ["testing", "automation", "playwright", "parabank"],
-          "author": "Test Automation Engineer"
-        }
-        EOF
         
     - name: Install dependencies
       run: npm install
